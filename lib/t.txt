@@ -1,0 +1,441 @@
+
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(Content());
+}
+
+// ignore: camel_case_types
+class MyApp extends StatelessWidget {
+  get buildTextComposer => null;
+
+  get nameController => null;
+
+  get passwordController => null;
+
+/// -------------------------------------------------------- */
+
+
+//-------------------Loginpage---------------------------- 
+
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      backgroundColor: Colors.blue,
+        appBar: AppBar(
+          toolbarHeight: 70,
+          title: Text('NaveenApp'),
+          elevation: 0,
+        
+        ),
+        body: Center(
+      
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+
+          Text('LOOK',
+          style: TextStyle(
+            color:Colors.white,
+            fontSize: 40,
+            fontFamily: 'montserat',
+            fontWeight: FontWeight.bold,
+            ),
+            ),       
+
+        /**---------------------username--------------------------------- */    
+         Container(
+            padding: EdgeInsets.all(10),
+                  child: TextField(
+                    
+                    controller: nameController,
+                    decoration: InputDecoration(
+                        
+                     filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                      labelText: 'User Name',
+
+                      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.white),
+                    ),
+                 
+                  
+                  ), 
+       ),
+         ),
+         
+       /**---------------------password--------------------------------- */    
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    
+                    decoration: InputDecoration(
+                      filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+
+                     focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.white), 
+        
+                    ),
+                  ),
+                ),
+                ),
+       /***-------------------button forgot password------------- */
+         Container(
+           
+         // ignore: deprecated_member_use
+         child:FlatButton(
+       
+                  onPressed: (){
+                    //forgot password screen
+                  },
+                  textColor: Colors.white,
+                  
+                  child: Text('Forgot Password?',
+                  textAlign: TextAlign.left,
+                  ),
+                ),
+                
+              
+         ),
+
+          /***-------------------button login------------- */
+         Container(
+                    //height: 50,
+                    //padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    // ignore: deprecated_member_use
+                    child: RaisedButton(
+                      textColor: Colors.black,
+                      color: Colors.white,
+                      hoverColor: Colors.green,
+                      child: Text('Login',
+                      
+                      ),
+                      onPressed: () {
+                        print(nameController.text);
+                        var passwordController;
+                                                print(passwordController.text);
+                      },
+                    )),
+
+         /**--------------------------signin---------------------------- */
+
+                Container(
+
+                    child: Row(
+                      children: <Widget>[
+                        Text('Does not have account?',
+                        style: TextStyle(color: Colors.white,),
+                       ),
+                        // ignore: deprecated_member_use
+                        FlatButton(
+                          textColor: Colors.white,
+                          child: Text(
+                            'Sign in',
+                            style: TextStyle(fontSize: 20,
+                            decoration: TextDecoration.underline,
+                            
+                            ),
+                          ),
+                          onPressed: ()=> {
+                            Signup()
+                 
+                          },
+                        )
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ),
+                    ),
+         
+         
+         
+         
+        ],
+      ),
+      ),
+      ),
+      );
+    
+  }
+}
+
+//.............................Signup page..................................
+
+class Signup extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+    home: Scaffold(
+
+      appBar: AppBar(
+        title: Text('Naveenapp'),
+      ),
+      body: Center(
+        //.......................................................
+        child:Column(
+          children: [
+            Text('Signup',
+            style: TextStyle(
+              color:Colors.blue,
+              fontFamily: 'montserat',
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+
+            //...............register form......................
+            SizedBox(height: 0.03),
+            //Name
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal:40),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                  labelText:"Name"
+                ),
+                
+              ),
+            ),
+/**....................Email............................ */
+ Container(
+   padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal:40),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                  labelText:"Email"
+                ),
+                
+              ),
+            ),
+            /**........................Class.......................... */
+             Container(
+               padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal:40),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                  labelText:"Class"
+                ),
+                
+              ),
+            ),
+             /**........................School.......................... */
+ Container(
+   padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal:40),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                  labelText:"School Name"
+                ),
+                
+              ),
+            ),
+            //........................password...........................
+            //
+            SizedBox(height: 0.03),
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal:40),
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                  labelText:"Password"
+                ),
+                obscureText: true,
+              ),
+            ),
+            /**................re-password................... */
+            
+             /* naveen if u need a confirm use this code as confirm password
+             TextFormField(
+                    controller: confirmpassword,
+                    obscureText: true,
+                    keyboardType: TextInputType.text,
+                    decoration:buildInputDecoration(Icons.lock,"Confirm Password"),
+                    validator: (String value){
+                      if(value.isEmpty)
+                      {
+                        return 'Please re-enter password';
+                      }
+                      print(password.text);
+                      print(confirmpassword.text);
+                      if(password.text!=confirmpassword.text){
+                        return "Password does not match";
+                      }
+                      return null;
+                    },
+                  ),*/
+
+            /**...................button.................. */
+            SizedBox(height: 0.03),
+            Container(
+              alignment: Alignment.centerRight,
+              margin: EdgeInsets.symmetric(horizontal:40,vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  //naveen add ur data base work flow
+                },
+              child:Text('Signup',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
+              ),
+            
+              ),
+              ),
+
+              //******* 
+              //*/
+              Container(
+                alignment: Alignment.centerRight,
+                margin: EdgeInsets.symmetric(horizontal:40, vertical:10),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),);
+                  },
+             child: Text('Already Have an Account? Sign in',
+             style: TextStyle(
+               fontSize:12,
+               fontWeight: FontWeight.bold
+               
+             ),
+             ),
+                ),                
+              ),
+          ],
+        ),
+      ),
+    ),
+    );
+  }
+}
+//.............Dashboard.....................
+
+//..............dropdown menu................
+
+//...........menu....................
+class Menu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      backgroundColor: Colors.blue,
+        appBar: AppBar(
+          toolbarHeight: 70,
+          title: Text('NaveenApp'),
+          elevation: 0,
+        
+        ),
+        body: Center(
+      
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+
+          Text('Select your content',
+          style: TextStyle(
+            color:Colors.white,
+            fontSize: 30,
+            fontFamily: 'montserat',
+            fontWeight: FontWeight.bold,
+            ),
+            ),       
+
+        
+         
+
+          /***-------------------button ------------- */
+           
+              
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
+              
+              FlatButton(
+                child: Text('AUDIO',
+                style: TextStyle(
+            color:Colors.black,
+            fontSize: 20,
+            fontFamily: 'montserat',
+            fontWeight: FontWeight.bold,
+            ),
+                ),
+                onPressed: () {},
+                color: Colors.white,
+                colorBrightness: Brightness.dark,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
+              FlatButton(
+                child: Text('VIDEO',
+               style: TextStyle(
+            color:Colors.black,
+            fontSize: 20,
+            fontFamily: 'montserat',
+            fontWeight: FontWeight.bold,
+            ),
+              ),
+                onPressed: () {},
+                color: Colors.white,
+                colorBrightness: Brightness.dark,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
+              FlatButton(
+                child: Text('TEXT',
+                style: TextStyle(
+            color:Colors.black,
+            fontSize: 20,
+            fontFamily: 'montserat',
+            fontWeight: FontWeight.bold,
+            ),
+                ),
+                onPressed: () {},
+                color: Colors.white,
+                colorBrightness: Brightness.dark,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+              ),
+         ]
+          ),
+        ),
+      ),
+    );
+    
+  }
+  }
